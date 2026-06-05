@@ -66,7 +66,7 @@ nav.scrolled{background:var(--navy-dark);padding:12px 48px}
 .hs-field input,.hs-field select{padding:9px 10px;border:1px solid var(--cream-dark);border-radius:6px;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--text);background:#fff;width:100%}
 .hs-btn{background:var(--amber);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s;white-space:nowrap}
 .hs-btn:hover{background:var(--amber-light)}
-@media(max-width:768px){.hero{height:auto;min-height:600px}.hero-slide{background-position:center}.hero-search{flex-direction:column;align-items:stretch;gap:8px}.hs-btn{width:100%}}
+@media(max-width:768px){.hero{height:auto;min-height:560px}.hero-slide{background-position:center}.hero-search{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:9px;padding:12px;margin-top:22px;max-width:340px}.hs-field{min-width:0}.hs-field:nth-child(3){grid-column:1/-1}.hs-btn{grid-column:1/-1;width:100%;padding:12px}}
 
 /* STATS STRIP */
 .stats-strip{background:var(--navy-dark);color:#fff;display:flex;justify-content:center;flex-wrap:wrap}
@@ -514,11 +514,12 @@ footer ul li a:hover{color:var(--amber-light)}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-slides">
-    <div class="hero-slide active" style="background-image:url('https://assets.craftedstays.co/oQqFN8faM3foYkBbda3UEMBAG0o2%2F0RlW7pplaYbum2AzPd1C%2Fproperties%2F8rAgf2jjMgPnGpmpM1ek%2FoXzVCbjyZFiWWLuksKLWlxuuVcg5o5VxeBdeMJU7-1772803273161.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('https://a0.muscache.com/im/pictures/hosting/Hosting-1568243456510502398/original/7c585e7b-386c-4b7b-838b-75207269d3ff.png')"></div>
-    <div class="hero-slide" style="background-image:url('https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjcxODkxODEzNDY2MDQ1MDEw/original/650f43ba-2935-4307-942d-62d691cf0c59.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('https://assets.craftedstays.co/oQqFN8faM3foYkBbda3UEMBAG0o2%2F0RlW7pplaYbum2AzPd1C%2Fproperties%2F8rAgf2jjMgPnGpmpM1ek%2FJ32eeul56aW0YI18qWwfOWDTXVw50ZfijaWX9tqz-1772803265778.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('https://assets.hospitable.com/property_images/2161510/mb98p0gXnxZEdUiuIBQkhA8v7B9eE10EzeolCSHj.jpg')"></div>
+    <div class="hero-slide active" style="background-image:url('hero-1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('hero-2.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('hero-3.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('hero-4.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('hero-5.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('hero-6.jpg')"></div>
   </div>
   <div class="hero-content">
     <p class="hero-eyebrow">Lake Hartwell, SC &amp; GA</p>
@@ -541,6 +542,7 @@ footer ul li a:hover{color:var(--amber-light)}
     <div class="hero-dot" onclick="goSlide(2)"></div>
     <div class="hero-dot" onclick="goSlide(3)"></div>
     <div class="hero-dot" onclick="goSlide(4)"></div>
+    <div class="hero-dot" onclick="goSlide(5)"></div>
   </div>
 </section>
 
