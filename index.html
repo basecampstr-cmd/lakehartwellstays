@@ -60,6 +60,13 @@ nav.scrolled{background:var(--navy-dark);padding:12px 48px}
 .hero-dots{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;display:flex;gap:8px}
 .hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .3s}
 .hero-dot.active{background:var(--amber)}
+.hero-search{margin:30px auto 0;display:flex;gap:10px;align-items:flex-end;background:rgba(255,255,255,.96);border-radius:10px;padding:14px 16px;max-width:640px;flex-wrap:wrap;box-shadow:0 12px 34px rgba(0,0,0,.28)}
+.hs-field{display:flex;flex-direction:column;gap:4px;text-align:left;flex:1;min-width:115px}
+.hs-field label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--stone)}
+.hs-field input,.hs-field select{padding:9px 10px;border:1px solid var(--cream-dark);border-radius:6px;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--text);background:#fff;width:100%}
+.hs-btn{background:var(--amber);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s;white-space:nowrap}
+.hs-btn:hover{background:var(--amber-light)}
+@media(max-width:768px){.hero{height:auto;min-height:600px}.hero-slide{background-position:center}.hero-search{flex-direction:column;align-items:stretch;gap:8px}.hs-btn{width:100%}}
 
 /* STATS STRIP */
 .stats-strip{background:var(--navy-dark);color:#fff;display:flex;justify-content:center;flex-wrap:wrap}
@@ -507,10 +514,11 @@ footer ul li a:hover{color:var(--amber-light)}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-slides">
-    <div class="hero-slide active" style="background-image:url('https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjcxODkxODEzNDY2MDQ1MDEw/original/650f43ba-2935-4307-942d-62d691cf0c59.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('https://assets.hospitable.com/property_images/2161510/mb98p0gXnxZEdUiuIBQkhA8v7B9eE10EzeolCSHj.jpg')"></div>
+    <div class="hero-slide active" style="background-image:url('https://assets.craftedstays.co/oQqFN8faM3foYkBbda3UEMBAG0o2%2F0RlW7pplaYbum2AzPd1C%2Fproperties%2F8rAgf2jjMgPnGpmpM1ek%2FoXzVCbjyZFiWWLuksKLWlxuuVcg5o5VxeBdeMJU7-1772803273161.jpg')"></div>
     <div class="hero-slide" style="background-image:url('https://a0.muscache.com/im/pictures/hosting/Hosting-1568243456510502398/original/7c585e7b-386c-4b7b-838b-75207269d3ff.png')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1439066290691-510066268af5?w=1600&q=85&fit=crop&crop=center')"></div>
+    <div class="hero-slide" style="background-image:url('https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjcxODkxODEzNDY2MDQ1MDEw/original/650f43ba-2935-4307-942d-62d691cf0c59.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('https://assets.craftedstays.co/oQqFN8faM3foYkBbda3UEMBAG0o2%2F0RlW7pplaYbum2AzPd1C%2Fproperties%2F8rAgf2jjMgPnGpmpM1ek%2FJ32eeul56aW0YI18qWwfOWDTXVw50ZfijaWX9tqz-1772803265778.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://assets.hospitable.com/property_images/2161510/mb98p0gXnxZEdUiuIBQkhA8v7B9eE10EzeolCSHj.jpg')"></div>
   </div>
   <div class="hero-content">
     <p class="hero-eyebrow">Lake Hartwell, SC &amp; GA</p>
@@ -520,12 +528,19 @@ footer ul li a:hover{color:var(--amber-light)}
       <a href="#properties" class="btn-primary">Browse Our Homes</a>
       <a href="#fishing" class="btn-outline">Explore the Fishing</a>
     </div>
+    <form class="hero-search" onsubmit="return heroSearch(event)">
+      <div class="hs-field"><label>Check-in</label><input type="date" id="hs-checkin"></div>
+      <div class="hs-field"><label>Check-out</label><input type="date" id="hs-checkout"></div>
+      <div class="hs-field"><label>Guests</label><select id="hs-guests"><option value="0">Any</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option></select></div>
+      <button type="submit" class="hs-btn">Search Stays</button>
+    </form>
   </div>
   <div class="hero-dots">
     <div class="hero-dot active" onclick="goSlide(0)"></div>
     <div class="hero-dot" onclick="goSlide(1)"></div>
     <div class="hero-dot" onclick="goSlide(2)"></div>
     <div class="hero-dot" onclick="goSlide(3)"></div>
+    <div class="hero-dot" onclick="goSlide(4)"></div>
   </div>
 </section>
 
@@ -1411,6 +1426,21 @@ let cur=0;
 const slides=document.querySelectorAll('.hero-slide'),dots=document.querySelectorAll('.hero-dot');
 function goSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active')}
 setInterval(()=>goSlide((cur+1)%slides.length),5500);
+// HERO SEARCH — filter property cards by guests + carry dates/guests to CraftedStays links
+function heroSearch(e){e.preventDefault();
+  var g=parseInt(document.getElementById('hs-guests').value)||0;
+  var ci=document.getElementById('hs-checkin').value,co=document.getElementById('hs-checkout').value;
+  var params=[];if(g>0)params.push('adults='+g);if(ci)params.push('startDate='+ci);if(co)params.push('endDate='+co);
+  var qs=params.length?'?'+params.join('&'):'';
+  document.querySelectorAll('.prop-grid .prop-card').forEach(function(card){
+    var s=card.querySelector('.prop-meta strong');var cap=s?(parseInt(s.textContent)||0):0;
+    card.style.display=(g===0||cap>=g)?'':'none';
+    card.querySelectorAll('a[href*="basecampgetaways.com/property/"]').forEach(function(a){a.href=a.href.split('?')[0]+qs;});
+  });
+  var t=document.getElementById('properties')||document.querySelector('.prop-grid');
+  if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  return false;
+}
 
 // TABS
 function switchTab(btn,id){
