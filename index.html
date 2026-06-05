@@ -30,7 +30,17 @@ nav.scrolled{background:var(--navy-dark);padding:12px 48px}
 .nav-links a:hover{color:var(--amber-light)}
 .nav-cta{background:var(--amber);color:#fff!important;padding:9px 20px;border-radius:4px;font-weight:600!important;transition:background .2s!important}
 .nav-cta:hover{background:var(--amber-light)!important}
-@media(max-width:768px){nav{padding:14px 20px}.nav-links a:not(.nav-cta){display:none}}
+.nav-toggle{display:none;background:none;border:0;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;padding:4px 8px}
+.nav-toggle::before{content:'☰'}
+@media(max-width:768px){
+  nav{padding:14px 20px}
+  .nav-toggle{display:block}
+  nav.nav-open .nav-toggle::before{content:'✕'}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--navy-dark);flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 16px;box-shadow:0 14px 30px rgba(0,0,0,.35);display:none}
+  nav.nav-open .nav-links{display:flex}
+  .nav-links a{display:block;padding:13px 2px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-links a.nav-cta{margin-top:12px;text-align:center;border-bottom:none;border-radius:5px}
+}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -454,6 +464,14 @@ footer ul li a:hover{color:var(--amber-light)}
   .tabs-nav::-webkit-scrollbar{height:0}
   .tab-btn{flex:0 0 auto}
 }
+/* MOBILE CAROUSELS (part 2) — tournaments, events, fishing reports */
+@media(max-width:768px){
+  .tournament-list,.event-list,.reports-grid{display:flex!important;flex-direction:row!important;grid-template-columns:none!important;max-width:none;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:14px;padding-bottom:14px}
+  .tournament-list>*,.event-list>*,.reports-grid>*{flex:0 0 84%;scroll-snap-align:start}
+  .tournament-list::-webkit-scrollbar,.event-list::-webkit-scrollbar,.reports-grid::-webkit-scrollbar{height:5px}
+  .tournament-list::-webkit-scrollbar-thumb,.event-list::-webkit-scrollbar-thumb{background:rgba(196,124,42,.55);border-radius:3px}
+  .reports-grid::-webkit-scrollbar-thumb{background:rgba(212,148,58,.6);border-radius:3px}
+}
 </style>
 </head>
 <body>
@@ -464,7 +482,7 @@ footer ul li a:hover{color:var(--amber-light)}
     <div class="nav-logo-mark">LH</div>
     <div class="nav-brand">Lake Hartwell Stays <span>by Basecamp Getaways</span></div>
   </div>
-  <div class="nav-links">
+  <div class="nav-links" onclick="if(event.target.tagName==='A')document.getElementById('mainNav').classList.remove('nav-open')">
     <a href="#properties">Homes</a>
     <a href="#fishing">Fishing</a>
     <a href="#watersports">Watersports &amp; Boat Rentals</a>
@@ -474,6 +492,7 @@ footer ul li a:hover{color:var(--amber-light)}
     <a href="#owners">Own a Home?</a>
     <a href="#properties" class="nav-cta">Book Now</a>
   </div>
+  <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('mainNav').classList.toggle('nav-open')"></button>
 </nav>
 
 <!-- HERO -->
