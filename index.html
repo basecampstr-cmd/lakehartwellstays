@@ -472,6 +472,12 @@ footer ul li a:hover{color:var(--amber-light)}
   .tournament-list::-webkit-scrollbar-thumb,.event-list::-webkit-scrollbar-thumb{background:rgba(196,124,42,.55);border-radius:3px}
   .reports-grid::-webkit-scrollbar-thumb{background:rgba(212,148,58,.6);border-radius:3px}
 }
+/* MOBILE polish — stack tournament cards vertically; tighten wide dark-section side margins */
+@media(max-width:768px){
+  .t-card{flex-direction:column;gap:12px}
+  .t-card .t-badge{align-self:flex-start}
+  .live-conditions,.reviews,.fireworks,.fishing-intro{padding-left:20px;padding-right:20px}
+}
 </style>
 </head>
 <body>
