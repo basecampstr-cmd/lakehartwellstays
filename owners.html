@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lake Hartwell Home Watch & Property Management | Basecamp Getaways</title>
+<meta name="description" content="Local, owner-first Lake Hartwell property management and home watch. Dynamic pricing, commission-free direct bookings, an SEO-optimized booking site, and a real person minutes from your dock. Get a free revenue projection.">
+<meta property="og:title" content="Your Lake Hartwell home, watched over like it's ours — and earning like it should.">
+<meta property="og:description" content="Local, owner-first Lake Hartwell home watch & vacation-rental management by Basecamp Getaways. Free revenue projection, no obligation.">
+<meta property="og:image" content="https://lakehartwellstays.com/hero-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1b3a4b;--navy-dark:#112530;--pine:#2d5016;--pine-light:#3d6b20;--amber:#c47c2a;--amber-light:#d4943a;--cream:#f4ede0;--cream-dark:#e8dfd0;--stone:#7a8f9a;--white:#fff;--text:#1a2830;--text-light:#4a5f6a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--navy);line-height:1.14}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.btn{display:inline-block;background:var(--amber);color:#fff;padding:15px 30px;border-radius:5px;font-weight:600;font-size:.92rem;letter-spacing:.02em;transition:background .2s,transform .2s}
+.btn:hover{background:var(--amber-light);transform:translateY(-1px)}
+.btn-navy{background:var(--navy)}.btn-navy:hover{background:var(--navy-dark)}
+.btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.85);color:#fff;padding:13px 28px}
+.btn-ghost:hover{background:#fff;color:var(--navy)}
+section{padding:76px 0}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:var(--navy-dark);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{width:40px;height:40px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:17px}
+.brand-name{font-family:'Playfair Display',serif;font-weight:600;font-size:1.06rem;color:#fff;line-height:1.05}
+.brand-name span{display:block;font-family:'Inter',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.nav .btn{padding:10px 20px;font-size:.82rem}
+/* HERO */
+.hero{position:relative;color:#fff;padding:120px 0 108px;background:linear-gradient(rgba(17,37,48,.62),rgba(17,37,48,.78)),url('https://lakehartwellstays.com/hero-1.jpg') center/cover fixed}
+.hero .eyebrow{color:var(--amber-light)}
+.hero h1{color:#fff;font-size:clamp(2.2rem,4.6vw,3.7rem);max-width:15ch;margin:16px 0 20px}
+.hero p{font-size:clamp(1rem,1.7vw,1.18rem);color:rgba(255,255,255,.9);font-weight:300;max-width:60ch;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+/* PROBLEM */
+.problem{background:var(--cream)}
+.problem .eyebrow{color:var(--stone)}
+.problem h2{font-size:clamp(1.7rem,3.2vw,2.5rem);max-width:20ch;margin:12px 0 22px}
+.problem p{color:var(--text-light);max-width:70ch;margin-bottom:16px;font-size:1.02rem}
+.pullquote{border-left:4px solid var(--amber);background:#fff;padding:24px 28px;border-radius:0 10px 10px 0;margin:30px 0;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.24rem;color:var(--navy);max-width:none;margin:0}
+.pullquote cite{display:block;margin-top:10px;font-style:normal;font-size:.82rem;font-weight:600;color:var(--stone);letter-spacing:.04em}
+/* HOME WATCH */
+.homewatch{background:var(--navy);color:#fff}
+.homewatch .eyebrow{color:var(--amber-light)}
+.homewatch h2{color:#fff;font-size:clamp(1.7rem,3.2vw,2.5rem);margin:12px 0 16px;max-width:20ch}
+.homewatch .lead{color:rgba(255,255,255,.85);max-width:66ch;font-size:1.05rem;margin-bottom:34px;font-weight:300}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.watch-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:24px}
+.watch-card h3{color:#fff;font-size:1.08rem;margin-bottom:8px}
+.watch-card p{color:rgba(255,255,255,.72);font-size:.9rem;line-height:1.6}
+.watch-icon{font-size:1.5rem;margin-bottom:10px;display:block}
+/* DIFFERENCE */
+.diff{background:var(--cream)}
+.diff h2{font-size:clamp(1.7rem,3.2vw,2.5rem);text-align:center;margin:12px auto 8px}
+.diff .sub{text-align:center;color:var(--text-light);max-width:60ch;margin:0 auto 42px}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;max-width:960px;margin:0 auto}
+.diff-item{display:flex;gap:13px;align-items:flex-start}
+.diff-item::before{content:'✓';color:var(--pine);font-weight:800;font-size:1.05rem;flex-shrink:0;line-height:1.5}
+.diff-item b{color:var(--navy)}
+.diff-item span{color:var(--text-light);font-size:.96rem}
+/* MARKETING ENGINE */
+.engine{background:#fff}
+.engine .eyebrow{color:var(--amber)}
+.engine h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin:12px 0 30px;max-width:22ch}
+.engine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.engine-card{background:var(--cream);border-radius:12px;padding:28px;border:1px solid var(--cream-dark)}
+.engine-card h3{font-size:1.12rem;margin-bottom:9px}
+.engine-card p{color:var(--text-light);font-size:.92rem}
+.engine-card a{color:var(--amber);font-weight:700;text-decoration:underline}
+.engine-cta{text-align:center;margin-top:40px}
+/* FORM */
+.formsec{background:var(--navy-dark);color:#fff}
+.formsec .inner{max-width:680px;margin:0 auto;text-align:center}
+.formsec .eyebrow{color:var(--amber-light)}
+.formsec h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.6rem);margin:12px 0 12px}
+.formsec p{color:rgba(255,255,255,.78);max-width:56ch;margin:0 auto 30px;font-weight:300}
+.formbox{background:#fff;border-radius:14px;padding:14px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+.formbox iframe{width:100%;min-height:820px;border:none;border-radius:8px;display:block}
+/* FOOTER */
+footer{background:#0c1a22;color:rgba(255,255,255,.72);padding:48px 0 34px;font-size:.88rem}
+footer .frow{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
+footer a{color:var(--amber-light)}
+footer .fbrand{font-family:'Playfair Display',serif;color:#fff;font-size:1.1rem;margin-bottom:6px}
+footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:.78rem;color:rgba(255,255,255,.5)}
+@media(max-width:760px){
+  section{padding:56px 0}
+  .hero{padding:84px 0 72px;background-attachment:scroll}
+  .diff-grid{grid-template-columns:1fr;gap:14px}
+  .nav .brand-name{font-size:.95rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="https://lakehartwellstays.com" target="_blank" rel="noopener">
+      <span class="brand-mark">LH</span>
+      <span class="brand-name">Lake Hartwell Stays<span>Home Watch &amp; Management</span></span>
+    </a>
+    <a class="btn" href="https://link.basecampgetaways.com/widget/booking/ux0V6sy1tHczRlxZIU3o" target="_blank" rel="noopener">Schedule a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Lake Hartwell Home Watch &amp; Property Management · Basecamp Getaways</p>
+    <h1>Your Lake Hartwell home, watched over like it's ours — and earning like it should.</h1>
+    <p>A local, owner-first team caring for a select group of Lake Hartwell homes. We watch over your property like family and market it like a business — dynamic pricing, commission-free direct bookings, and a real person a few minutes from your dock.</p>
+    <div class="hero-btns">
+      <a class="btn" href="#form">Get My Free Revenue Projection →</a>
+      <a class="btn btn-ghost" href="https://link.basecampgetaways.com/widget/booking/ux0V6sy1tHczRlxZIU3o" target="_blank" rel="noopener">Schedule a Call</a>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <p class="eyebrow">The Honest Truth</p>
+    <h2>What most Lake Hartwell owners are quietly settling for</h2>
+    <p>Lake Hartwell fills up every summer almost regardless of what anyone does. That's great for the lake — but it quietly removes the pressure on managers to actually get better. Pricing gets set once and forgotten. Listing photos age. Guests still coordinate a key handoff before they can get to the water.</p>
+    <p>Meanwhile, high-fee national brands take a big cut and manage your home from a call center, and generic local managers treat your investment like just another unit on a spreadsheet. Your home — and your revenue — deserve more attention than that.</p>
+    <div class="pullquote">
+      <p>"When the calendar fills every July no matter what, the pressure to do better disappears. We never got that memo — we treat every home like it's the only one we manage."</p>
+      <cite>— Joseph, Basecamp Getaways</cite>
+    </div>
+    <p>We're a small, local, owner-first team by design. We'd rather manage a handful of Lake Hartwell homes exceptionally than a hundred of them adequately.</p>
+  </div>
+</section>
+
+<!-- HOME WATCH -->
+<section class="homewatch" id="homewatch">
+  <div class="wrap">
+    <p class="eyebrow">Home Watch Program</p>
+    <h2>Peace of mind between stays</h2>
+    <p class="lead">Whether your home is on the rental calendar or you just want it looked after while you're away, our Home Watch program keeps a trusted set of eyes on your property — and sends you photo reports so you always know it's in good hands.</p>
+    <div class="watch-grid">
+      <div class="watch-card"><span class="watch-icon">🏠</span><h3>Routine Inspections</h3><p>Regular interior and exterior walk-throughs — doors, windows, appliances, and signs of leaks, pests, or wear caught early.</p></div>
+      <div class="watch-card"><span class="watch-icon">⛈️</span><h3>Storm &amp; Freeze Checks</h3><p>Before and after severe weather, we check the home, the dock, and the waterfront so small problems never become expensive ones.</p></div>
+      <div class="watch-card"><span class="watch-icon">🔧</span><h3>Maintenance Eyes-On</h3><p>HVAC, plumbing, and systems monitored, with our local team ready to coordinate repairs fast — no long-distance guesswork.</p></div>
+      <div class="watch-card"><span class="watch-icon">📷</span><h3>Photo Reports to You</h3><p>After each visit you get a simple report with photos, so you have real peace of mind from anywhere in the country.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="diff">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center">The Difference</p>
+    <h2>How we run your home differently</h2>
+    <p class="sub">Everything a modern management company should do — and most on the lake still don't.</p>
+    <div class="diff-grid">
+      <div class="diff-item"><span><b>AI-powered dynamic pricing</b> — daily rate adjustments that capture peak season and fill the shoulder months.</span></div>
+      <div class="diff-item"><span><b>Everywhere your guests look</b> — Airbnb, VRBO, and commission-free direct booking on lakehartwellstays.com.</span></div>
+      <div class="diff-item"><span><b>100% keyless entry</b> — no lockboxes, no key handoffs, no coordination headaches.</span></div>
+      <div class="diff-item"><span><b>Photography &amp; listing copy that converts</b> browsers into booked nights.</span></div>
+      <div class="diff-item"><span><b>Guest screening, 24/7 messaging,</b> and 5-star review management.</span></div>
+      <div class="diff-item"><span><b>Transparent, fair fees</b> — you always know exactly what you're earning.</span></div>
+      <div class="diff-item"><span><b>Local care team</b> for inspections, turnovers, and fast on-site response.</span></div>
+      <div class="diff-item"><span><b>Monthly owner statements</b> with a full revenue breakdown — we think like asset owners.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETING ENGINE -->
+<section class="engine">
+  <div class="wrap">
+    <p class="eyebrow">Your Own Booking Machine</p>
+    <h2>A booking machine — not just another listing</h2>
+    <div class="engine-grid">
+      <div class="engine-card"><h3>Commission-free direct bookings</h3><p>Guests book your home directly on <a href="https://lakehartwellstays.com" target="_blank" rel="noopener">lakehartwellstays.com</a> — no Airbnb or VRBO service fees skimming the top, so more of every booking reaches you.</p></div>
+      <div class="engine-card"><h3>An SEO-optimized site that actually ranks</h3><p>Our Lake Hartwell site is built to show up for the searches real travelers make — "things to do on Lake Hartwell," fishing reports, dining, boat rentals, and more — turning trip-planners into <em>your</em> guests.</p></div>
+      <div class="engine-card"><h3>A past-guest database we market to</h3><p>We keep a growing list of past and interested guests and market to them directly with email offers and repeat-stay campaigns — so your calendar fills from people who already love the lake.</p></div>
+      <div class="engine-card"><h3>Every channel, one strategy</h3><p>Airbnb, VRBO, and direct — all under one dynamic-pricing strategy and one obsessive local team, working every channel toward your best year yet.</p></div>
+    </div>
+    <div class="engine-cta">
+      <a class="btn btn-navy" href="https://basecampstr.com/lake-hartwell-vacation-rental-management" target="_blank" rel="noopener">Case Studies — See the Results →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="formsec" id="form">
+  <div class="wrap">
+    <div class="inner">
+      <p class="eyebrow">Free &amp; No Obligation</p>
+      <h2>Get your free revenue projection</h2>
+      <p>Tell us about your Lake Hartwell home and we'll send back a custom earnings estimate — no pressure, no obligation. If we're a fit, great. If not, you'll still walk away knowing what your home could earn.</p>
+    </div>
+    <div class="formbox">
+      <iframe src="https://link.basecampgetaways.com/widget/form/qVfRSODy12KKV9R82IZs" id="inline-qVfRSODy12KKV9R82IZs" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Basecamp Getaways Management" data-height="892" data-layout-iframe-id="inline-qVfRSODy12KKV9R82IZs" data-form-id="qVfRSODy12KKV9R82IZs" title="Basecamp Getaways Management"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <div style="max-width:340px">
+        <div class="fbrand">Lake Hartwell Stays <span style="font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.12em;color:rgba(255,255,255,.55);display:block;text-transform:uppercase">by Basecamp Getaways</span></div>
+        <p>Local, owner-first Lake Hartwell home watch &amp; vacation-rental management — plus the direct-booking site and complete local guide to Lake Hartwell.</p>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:600;margin-bottom:8px">Get Started</div>
+        <a href="#form">Free revenue projection</a><br>
+        <a href="https://link.basecampgetaways.com/widget/booking/ux0V6sy1tHczRlxZIU3o" target="_blank" rel="noopener">Schedule a call</a><br>
+        <a href="https://basecampstr.com/lake-hartwell-vacation-rental-management" target="_blank" rel="noopener">Case studies</a>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:600;margin-bottom:8px">Contact</div>
+        <a href="mailto:joseph@basecampgetaways.com">joseph@basecampgetaways.com</a><br>
+        <a href="https://lakehartwellstays.com" target="_blank" rel="noopener">lakehartwellstays.com</a>
+      </div>
+    </div>
+    <div class="legal">© 2026 Basecamp Getaways · Lake Hartwell, SC &amp; GA. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</body>
+</html>
