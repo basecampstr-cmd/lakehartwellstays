@@ -35,6 +35,10 @@ section{padding:76px 0}
 .brand-name{font-family:'Playfair Display',serif;font-weight:600;font-size:1.06rem;color:#fff;line-height:1.05}
 .brand-name span{display:block;font-family:'Inter',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 .nav .btn{padding:10px 20px;font-size:.82rem}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-phone{color:#fff;font-weight:600;font-size:.92rem;white-space:nowrap}
+.nav-phone:hover{color:var(--amber-light)}
+@media(max-width:560px){.nav .brand-name span{display:none}.nav-phone{font-size:.85rem}.nav .btn{padding:9px 13px;font-size:.76rem}}
 /* HERO */
 .hero{position:relative;color:#fff;padding:120px 0 108px;background:linear-gradient(rgba(17,37,48,.62),rgba(17,37,48,.78)),url('https://lakehartwellstays.com/hero-1.jpg') center/cover fixed}
 .hero .eyebrow{color:var(--amber-light)}
@@ -108,7 +112,10 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
       <span class="brand-mark">LH</span>
       <span class="brand-name">Lake Hartwell Stays<span>Home Watch &amp; Management</span></span>
     </a>
-    <a class="btn" href="https://link.basecampgetaways.com/widget/booking/ux0V6sy1tHczRlxZIU3o" target="_blank" rel="noopener">Schedule a Call</a>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:7063914424">📞 706-391-4424</a>
+      <a class="btn" href="https://link.basecampgetaways.com/widget/booking/ux0V6sy1tHczRlxZIU3o" target="_blank" rel="noopener">Schedule a Call</a>
+    </div>
   </div>
 </nav>
 
@@ -220,6 +227,7 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
       </div>
       <div>
         <div style="color:#fff;font-weight:600;margin-bottom:8px">Contact</div>
+        <a href="tel:7063914424">706-391-4424</a><br>
         <a href="mailto:joseph@basecampgetaways.com">joseph@basecampgetaways.com</a><br>
         <a href="https://lakehartwellstays.com" target="_blank" rel="noopener">lakehartwellstays.com</a>
       </div>
