@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#1b3a4b;--navy-dark:#112530;--pine:#2d5016;--pine-light:#3d6b20;--amber:#c47c2a;--amber-light:#d4943a;--cream:#f4ede0;--cream-dark:#e8dfd0;--stone:#7a8f9a;--white:#fff;--text:#1a2830;--text-light:#4a5f6a}
+:root{--navy:#1b3a4b;--navy-dark:#112530;--pine:#2d5016;--pine-light:#3d6b20;--amber:#c47c2a;--amber-light:#d4943a;--cream:#f4ede0;--cream-dark:#e8dfd0;--stone:#7a8f9a;--white:#fff;--text:#1a2830;--text-light:#4a5f6a;--forest:#1b3a4b;--forest-2:#2a5064;--gold:#c47c2a;--gold-dk:#8f5a17;--gold-lt:#e6c07a;--line:#e8dfd0;--ink-soft:#4a5f6a;--r:12px;--r-lg:18px;--shadow-lg:0 24px 60px rgba(17,37,48,.16)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
@@ -102,6 +102,59 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
   .diff-grid{grid-template-columns:1fr;gap:14px}
   .nav .brand-name{font-size:.95rem}
 }
+/* ===== LAUNCH PACKAGE PROMO ===== */
+.launch-ribbon{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;background:linear-gradient(90deg,var(--gold-dk),var(--gold));color:#231a06;padding:11px 22px;text-align:center;line-height:1.35;border-bottom:2px solid var(--gold-lt)}
+.launch-ribbon:hover{background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
+.launch-ribbon .lr-badge{font-family:'Inter',sans-serif;font-weight:800;font-size:20px;letter-spacing:.02em;background:var(--forest);color:var(--gold-lt);padding:3px 12px;border-radius:8px;flex:none}
+.launch-ribbon .lr-txt{font-family:'Inter',sans-serif;font-size:14.5px;font-weight:500;max-width:60ch}
+.launch-ribbon .lr-txt b{font-weight:700}
+.launch-ribbon .lr-cta{font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--forest);color:#fff;padding:9px 18px;border-radius:100px;flex:none;white-space:nowrap}
+.launch-ribbon:hover .lr-cta{background:var(--forest-2)}
+.launch{background:radial-gradient(1200px 500px at 50% -10%,#26506a 0%,var(--forest) 58%);color:#fff}
+.launch .lp-head{max-width:760px;margin:0 auto 42px;text-align:center}
+.launch .lp-head h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.7rem);margin:10px 0 14px}
+.launch .lp-head p{color:rgba(255,255,255,.85);font-size:1.05rem}
+.lp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:22px;max-width:1040px;margin:0 auto}
+.lp-card{background:#fff;border-radius:var(--r-lg);padding:30px 26px 28px;position:relative;border:1px solid var(--line);box-shadow:var(--shadow-lg);display:flex;flex-direction:column}
+.lp-card .lp-ic{width:52px;height:52px;border-radius:13px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px}
+.lp-card h3{font-size:1.32rem;margin-bottom:9px;color:var(--forest)}
+.lp-card p{font-size:14.5px;color:var(--ink-soft);flex:1}
+.lp-card .lp-val{margin-top:18px;font-family:'Inter',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dk);background:var(--cream);border:1px solid var(--gold-lt);border-radius:100px;padding:8px 16px;text-align:center;align-self:flex-start}
+.lp-note{max-width:760px;margin:34px auto 0;text-align:center}
+.lp-note .btn{margin-bottom:16px}
+.lp-fine{font-size:12.5px;color:rgba(255,255,255,.62);max-width:640px;margin:0 auto;line-height:1.6}
+.lp-pick{display:inline-block;font-family:'Inter',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:8px}
+.form-tiein{max-width:680px;margin:0 auto 26px;background:rgba(255,255,255,.08);border:1px solid rgba(231,201,138,.32);border-radius:var(--r);padding:16px 22px;text-align:center;font-size:15px;color:#fff}
+.form-tiein b{color:var(--gold-lt)}
+.sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;justify-content:space-between;gap:12px;background:var(--forest);border-top:2px solid var(--gold);padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px rgba(20,54,16,.28);transition:transform .3s}
+.sticky-cta .sc-txt{font-family:'Inter',sans-serif;font-size:13px;line-height:1.25;color:#fff}
+.sticky-cta .sc-txt b{color:var(--gold-lt);font-family:'Inter',sans-serif;font-weight:700;letter-spacing:.02em}
+.sticky-cta .sc-btn{flex:none;font-family:'Inter',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--gold);color:#231a06;padding:10px 16px;border-radius:100px;white-space:nowrap}
+.sticky-cta.hide{transform:translateY(130%)}
+.side-rail{display:none;position:fixed;right:22px;bottom:22px;z-index:60;width:308px;background:var(--forest);color:#fff;border:1px solid rgba(231,201,138,.35);border-radius:16px;padding:20px 18px 16px;box-shadow:0 22px 54px rgba(20,54,16,.4);opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;pointer-events:none}
+.side-rail.show{opacity:1;transform:none;pointer-events:auto}
+.side-rail .sr-badge{position:absolute;top:-15px;left:18px;background:var(--gold);color:#231a06;font-family:'Inter',sans-serif;font-weight:800;font-size:16px;letter-spacing:.02em;padding:4px 13px;border-radius:8px}
+.side-rail .sr-close{position:absolute;top:9px;right:11px;background:transparent;border:none;color:rgba(255,255,255,.55);font-size:19px;line-height:1;cursor:pointer;padding:2px 6px}
+.side-rail .sr-close:hover{color:#fff}
+.side-rail .sr-body{margin:10px 0 15px}
+.side-rail .sr-body b{font-family:'Playfair Display',serif;font-weight:600;font-size:1.18rem;color:#fff;display:block;margin-bottom:5px}
+.side-rail .sr-body span{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.5}
+.side-rail .sr-cta{display:block;text-align:center;background:var(--gold);color:#231a06;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:12px;border-radius:100px;transition:background .2s}
+.side-rail .sr-cta:hover{background:var(--gold-lt)}
+@media(min-width:901px){.side-rail{display:block}}
+@media(max-width:900px){.lp-grid{grid-template-columns:1fr}.launch-ribbon .lr-cta{width:100%;max-width:280px}}
+@media(max-width:700px){.sticky-cta{display:flex}body{padding-bottom:70px}.launch-ribbon{gap:10px;padding:12px 16px}.launch-ribbon .lr-badge{font-size:18px}.launch-ribbon .lr-txt{font-size:13.5px}}
+/* ===== MOBILE SWIPE SLIDERS ===== */
+@media(max-width:768px){
+  .watch-grid,.engine-grid,.lp-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:0 -24px;padding:6px 24px 18px}
+  .watch-grid>*,.engine-grid>*,.lp-grid>*{flex:0 0 80%;scroll-snap-align:start}
+  .watch-grid::-webkit-scrollbar,.engine-grid::-webkit-scrollbar,.lp-grid::-webkit-scrollbar{height:6px}
+  .watch-grid::-webkit-scrollbar-thumb,.engine-grid::-webkit-scrollbar-thumb,.lp-grid::-webkit-scrollbar-thumb{background:var(--gold);border-radius:100px}
+  .watch-grid::-webkit-scrollbar-track,.engine-grid::-webkit-scrollbar-track,.lp-grid::-webkit-scrollbar-track{background:transparent}
+  .swipe-hint{display:block;text-align:center;font-family:'Inter',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);margin:0 0 14px}
+  .homewatch .swipe-hint,.launch .swipe-hint{color:var(--gold-lt)}
+}
+.swipe-hint{display:none}
 </style>
 </head>
 <body>
@@ -118,6 +171,13 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
     </div>
   </div>
 </nav>
+
+<!-- LAUNCH PACKAGE RIBBON -->
+<a href="#launch" class="launch-ribbon" aria-label="Choose your five thousand dollar Basecamp Launch Package">
+  <span class="lr-badge">$5,000</span>
+  <span class="lr-txt"><b>Choose your Basecamp Launch Package.</b> See if your home qualifies — get your free income projection &amp; package options.</span>
+  <span class="lr-cta">See the packages →</span>
+</a>
 
 <!-- HERO -->
 <header class="hero">
@@ -153,6 +213,7 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
     <p class="eyebrow">Home Watch Program</p>
     <h2>Peace of mind between stays</h2>
     <p class="lead">Whether your home is on the rental calendar or you just want it looked after while you're away, our Home Watch program keeps a trusted set of eyes on your property — and sends you photo reports so you always know it's in good hands.</p>
+    <div class="swipe-hint">Swipe →</div>
     <div class="watch-grid">
       <div class="watch-card"><span class="watch-icon">🏠</span><h3>Routine Inspections</h3><p>Regular interior and exterior walk-throughs — doors, windows, appliances, and signs of leaks, pests, or wear caught early.</p></div>
       <div class="watch-card"><span class="watch-icon">⛈️</span><h3>Storm &amp; Freeze Checks</h3><p>Before and after severe weather, we check the home, the dock, and the waterfront so small problems never become expensive ones.</p></div>
@@ -186,6 +247,7 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
   <div class="wrap">
     <p class="eyebrow">Your Own Booking Machine</p>
     <h2>A booking machine — not just another listing</h2>
+    <div class="swipe-hint">Swipe →</div>
     <div class="engine-grid">
       <div class="engine-card"><h3>Commission-free direct bookings</h3><p>Guests book your home directly on <a href="https://lakehartwellstays.com" target="_blank" rel="noopener">lakehartwellstays.com</a> — no Airbnb or VRBO service fees skimming the top, so more of every booking reaches you.</p></div>
       <div class="engine-card"><h3>An SEO-optimized site that actually ranks</h3><p>Our Lake Hartwell site is built to show up for the searches real travelers make — "things to do on Lake Hartwell," fishing reports, dining, boat rentals, and more — turning trip-planners into <em>your</em> guests.</p></div>
@@ -198,6 +260,48 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
   </div>
 </section>
 
+<!-- LAUNCH PACKAGE -->
+<section class="launch" id="launch">
+  <div class="wrap">
+    <div class="lp-head">
+      <span class="lp-pick">A limited welcome offer for new owners</span>
+      <h2>Up to $5,000 to launch your home right.</h2>
+      <p>When you list a qualifying home with us, you choose one Launch Package — our investment in getting your property earning at its full potential from day one. Pick the one that fits your home.</p>
+    </div>
+    <div class="swipe-hint">Swipe packages →</div>
+    <div class="lp-grid">
+      <div class="lp-card">
+        <div class="lp-ic">🌿</div>
+        <h3>Lawn + Property Care</h3>
+        <p>Routine lawn &amp; grounds maintenance all season, plus professional hot tub deep-cleaning &amp; maintenance — and dock moving as lake levels rise and fall. One flexible allowance; you direct where it goes.</p>
+        <span class="lp-val">Up to $5,000 value</span>
+      </div>
+      <div class="lp-card">
+        <div class="lp-ic">📈</div>
+        <h3>Performance Guarantee</h3>
+        <p>We put up to $5,000 of our own management fees behind the annual revenue target we agree on. If we miss it during the performance period, we credit the shortfall back to you. The projection isn't just a promise — it's backed.</p>
+        <span class="lp-val">Up to $5,000 value</span>
+      </div>
+      <div class="lp-card">
+        <div class="lp-ic">📸</div>
+        <h3>Basecamp Makeover</h3>
+        <p>Professional photography, a listing redesign, and a hands-on amenity &amp; staging consultation to make your home stand out and convert more lookers into bookings.</p>
+        <span class="lp-val">Up to $5,000 value</span>
+      </div>
+      <div class="lp-card">
+        <div class="lp-ic">🛠️</div>
+        <h3>Property Upgrade Credit</h3>
+        <p>Up to $5,000 back toward one approved, revenue-producing improvement — a hot tub, game room, outdoor living space, or the amenity most likely to lift your nightly rate.</p>
+        <span class="lp-val">Up to $5,000 value</span>
+      </div>
+    </div>
+    <div class="lp-note">
+      <a href="#form" class="btn">Get my free projection &amp; package options</a>
+      <p class="lp-fine">You choose one package when you sign your management agreement. Available to qualifying properties projected to earn $85,000+ in annual gross booking revenue. Promotional value up to $5,000; terms apply. Start with a free, no-obligation income projection below to see if your home qualifies.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FORM -->
 <section class="formsec" id="form">
   <div class="wrap">
@@ -206,6 +310,7 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
       <h2>Get your free revenue projection</h2>
       <p>Tell us about your Lake Hartwell home and we'll send back a custom earnings estimate — no pressure, no obligation. If we're a fit, great. If not, you'll still walk away knowing what your home could earn.</p>
     </div>
+    <div class="form-tiein">Fill this out to get <b>two things back</b>: (1) your complimentary income projection, and (2) your <b>$5,000 Launch Package</b> options.</div>
     <div class="formbox">
       <iframe src="https://link.basecampgetaways.com/widget/form/qVfRSODy12KKV9R82IZs" id="inline-qVfRSODy12KKV9R82IZs" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Basecamp Getaways Management" data-height="892" data-layout-iframe-id="inline-qVfRSODy12KKV9R82IZs" data-form-id="qVfRSODy12KKV9R82IZs" title="Basecamp Getaways Management"></iframe>
     </div>
@@ -235,6 +340,44 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
     <div class="legal">© 2026 Basecamp Getaways · Lake Hartwell, SC &amp; GA. All rights reserved.</div>
   </div>
 </footer>
+
+<!-- DESKTOP FLOATING SIDE RAIL -->
+<div class="side-rail" id="sideRail" role="complementary" aria-label="Basecamp Launch Package offer">
+  <button class="sr-close" id="srClose" aria-label="Dismiss offer">&times;</button>
+  <div class="sr-badge">$5,000</div>
+  <div class="sr-body">
+    <b>Basecamp Launch Package</b>
+    <span>See if your home qualifies — get a free income projection &amp; your package options.</span>
+  </div>
+  <a href="#form" class="sr-cta">Get my free projection →</a>
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<a href="#form" class="sticky-cta" id="stickyCta" aria-label="Get your free projection and five thousand dollar Launch Package options">
+  <span class="sc-txt"><b>$5,000 Launch Package</b><br>See if your home qualifies</span>
+  <span class="sc-btn">Free Projection →</span>
+</a>
+
+<script>
+(function(){
+  var rail=document.getElementById('sideRail');
+  var sticky=document.getElementById('stickyCta');
+  var closeBtn=document.getElementById('srClose');
+  var railClosed=false;
+  if(closeBtn){closeBtn.addEventListener('click',function(){railClosed=true;if(rail)rail.classList.remove('show');});}
+  function update(){
+    var y=window.pageYOffset||document.documentElement.scrollTop;
+    var est=document.getElementById('form');
+    var nearForm=false;
+    if(est){var r=est.getBoundingClientRect();nearForm=r.top < window.innerHeight*0.85 && r.bottom>0;}
+    if(rail){ if(y>560 && !nearForm && !railClosed){rail.classList.add('show');} else {rail.classList.remove('show');} }
+    if(sticky){ if(nearForm){sticky.classList.add('hide');} else {sticky.classList.remove('hide');} }
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update,{passive:true});
+  update();
+})();
+</script>
 
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
