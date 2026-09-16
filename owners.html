@@ -155,6 +155,60 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
   .homewatch .swipe-hint,.launch .swipe-hint{color:var(--gold-lt)}
 }
 .swipe-hint{display:none}
+
+/* ---------- /owners restructure: offer-led hero, video, top form ---------- */
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+.offer-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(196,124,42,.16);
+  border:1px solid rgba(230,192,122,.5);border-radius:100px;padding:7px 16px 7px 8px;margin-bottom:18px}
+.offer-badge .ob-amt{background:var(--gold);color:var(--navy-dark);font-weight:800;font-size:.86rem;
+  letter-spacing:.02em;padding:3px 11px;border-radius:100px}
+.offer-badge .ob-txt{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-lt)}
+.hero-grid h1{max-width:19ch;margin:0 0 16px;font-size:clamp(1.85rem,3.3vw,2.85rem);line-height:1.12}
+.hero{padding-top:74px;padding-bottom:82px}
+.hero-grid .hero-sub{font-size:clamp(1rem,1.6vw,1.12rem);color:rgba(255,255,255,.88);
+  font-weight:300;max-width:46ch;margin-bottom:26px}
+.hv{margin:0 0 24px;border-radius:var(--r);overflow:hidden;background:#0d1b23;
+  box-shadow:var(--shadow-lg);position:relative}
+.hv video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#0d1b23}
+.hv-end{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;background:rgba(17,37,48,.9);text-align:center;padding:24px}
+.hv-end.show{display:flex}
+.hv-end p{font-size:1.05rem;color:#fff;font-weight:500;margin:0;max-width:26ch}
+.hero-talk{font-size:.9rem;color:rgba(255,255,255,.78)}
+.hero-talk a{color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px}
+.hero-form{background:#fff;border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden}
+.hero-form .hf-head{padding:24px 28px 18px;border-bottom:1px solid var(--line);background:var(--cream)}
+.hero-form .hf-head h2{font-size:1.5rem;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.hero-form .hf-head p{font-size:.88rem;color:var(--text-light);margin:0}
+.hero-form .hf-tie{background:rgba(196,124,42,.1);border-bottom:1px solid var(--line);
+  padding:11px 28px;font-size:.82rem;color:var(--text);line-height:1.5}
+.hero-form .hf-tie b{color:var(--gold-dk)}
+.hero-form .hf-body{padding:4px 14px 10px}
+.hero-form iframe{width:100%;border:none;display:block;min-height:820px;border-radius:8px}
+.hero-form .hf-foot{background:var(--cream);border-top:1px solid var(--line);
+  padding:11px 28px;font-size:.74rem;color:var(--text-light)}
+.offer-strip{background:var(--cream);border-bottom:1px solid var(--line);padding:38px 0}
+.os-in{display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center}
+.os-amt{font-weight:800;font-size:2.5rem;line-height:1;color:var(--gold-dk);letter-spacing:-.02em}
+.os-amt span{display:block;font-size:.66rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-light);margin-top:7px}
+.os-mid h3{font-size:1.12rem;margin:0 0 10px;color:var(--navy)}
+.os-pk{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.os-pk span{background:#fff;border:1px solid var(--line);border-radius:100px;
+  padding:5px 13px;font-size:.8rem;font-weight:600;color:var(--navy)}
+.os-fine{font-size:.76rem;color:var(--text-light);line-height:1.5;max-width:70ch}
+.os-cta{white-space:nowrap}
+@media(max-width:900px){
+  .hero{padding-top:50px;padding-bottom:54px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-grid h1{max-width:100%}
+  .hero-form iframe{min-height:880px}
+  .os-in{grid-template-columns:1fr;gap:18px;text-align:left}
+  .os-amt{font-size:2rem}
+  .os-cta{width:100%}
+  .os-cta .btn{display:block;text-align:center}
+}
+
 </style>
 </head>
 <body>
@@ -180,17 +234,80 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
 </a>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Lake Hartwell Home Watch &amp; Property Management · Basecamp Getaways</p>
-    <h1>Your Lake Hartwell home, watched over like it's ours — and earning like it should.</h1>
-    <p>A local, owner-first team caring for a select group of Lake Hartwell homes. We watch over your property like family and market it like a business — dynamic pricing, commission-free direct bookings, and a real person a few minutes from your dock.</p>
-    <div class="hero-btns">
-      <a class="btn" href="#form">Get My Free Revenue Projection →</a>
-      <a class="btn btn-ghost" href="https://link.basecampgetaways.com/widget/booking/ux0V6sy1tHczRlxZIU3o" target="_blank" rel="noopener">Schedule a Call</a>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+
+    <div>
+      <p class="eyebrow">Lake Hartwell Home Watch &amp; Property Management</p>
+
+      <span class="offer-badge">
+        <span class="ob-amt">$5,000</span>
+        <span class="ob-txt">Launch Package for new owners</span>
+      </span>
+
+      <h1>Your Lake Hartwell home, watched over like it&rsquo;s ours &mdash; and earning like it should.</h1>
+
+      <p class="hero-sub">A local, owner-first team caring for a select group of Lake Hartwell homes.
+        Start with a free income projection &mdash; we&rsquo;ll tell you what your home should earn, and
+        whether it qualifies for up to <b>$5,000</b> in launch benefits.</p>
+
+      <!-- VIDEO SLOT ------------------------------------------------------
+           Hidden until VIDEO_SRC is set at the bottom of this file.
+           Drop your .mp4 next to hero-1.jpg, then set:
+               var VIDEO_SRC = "/owner-intro.mp4";
+      ------------------------------------------------------------------- -->
+      <div class="hv" id="heroVideo" hidden>
+        <video id="ownerVideo" controls preload="metadata" playsinline
+               poster="https://lakehartwellstays.com/hero-2.jpg"></video>
+        <div class="hv-end" id="hvEnd">
+          <p>Ready to see what your home could earn?</p>
+          <a class="btn" href="#heroform">Get my free projection &rarr;</a>
+        </div>
+      </div>
+
+      <div class="hero-btns" style="margin-bottom:16px">
+        <a class="btn" href="#heroform">Get My Free Revenue Projection &rarr;</a>
+        <a class="btn btn-ghost" href="https://link.basecampgetaways.com/widget/booking/ux0V6sy1tHczRlxZIU3o" target="_blank" rel="noopener">Schedule a Call</a>
+      </div>
+
+      <p class="hero-talk">Rather talk it through first? <a href="tel:+17069672392">Call (706) 967-2392</a>.</p>
     </div>
+
+    <div class="hero-form" id="heroform">
+      <div class="hf-head">
+        <h2>Get your free revenue projection</h2>
+        <p>No cost, no obligation. Tell us about your Lake Hartwell home.</p>
+      </div>
+      <div class="hf-tie">You get <b>two things back</b>: your complimentary income projection, and your
+        <b>$5,000 Launch Package</b> options.</div>
+      <div class="hf-body">
+        <iframe src="https://link.basecampgetaways.com/widget/form/qVfRSODy12KKV9R82IZs" id="inline-qVfRSODy12KKV9R82IZs" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Basecamp Getaways Management" data-height="892" data-layout-iframe-id="inline-qVfRSODy12KKV9R82IZs" data-form-id="qVfRSODy12KKV9R82IZs" title="Basecamp Getaways Management"></iframe>
+      </div>
+      <div class="hf-foot">Your information stays with us. We don&rsquo;t sell or share owner data.</div>
+    </div>
+
   </div>
 </header>
+
+<!-- OFFER STRIP -->
+<section class="offer-strip">
+  <div class="wrap os-in">
+    <div class="os-amt">$5,000<span>Launch Package</span></div>
+    <div class="os-mid">
+      <h3>Choose one of four Launch Packages when you list with us.</h3>
+      <div class="os-pk">
+        <span>Lawn + Property Care</span>
+        <span>Performance Guarantee</span>
+        <span>Basecamp Makeover</span>
+        <span>Property Upgrade Credit</span>
+      </div>
+      <p class="os-fine">Available to qualifying properties projected to earn $85,000+ in annual gross
+        booking revenue. Promotional value up to $5,000; terms apply. Not sure if your home clears that?
+        That is exactly what the free projection tells you.</p>
+    </div>
+    <div class="os-cta"><a class="btn" href="#launch">See the packages &rarr;</a></div>
+  </div>
+</section>
 
 <!-- PROBLEM -->
 <section class="problem">
@@ -302,17 +419,20 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
   </div>
 </section>
 
-<!-- FORM -->
+<!-- BOTTOM CTA (form now lives in the hero) -->
 <section class="formsec" id="form">
   <div class="wrap">
     <div class="inner">
       <p class="eyebrow">Free &amp; No Obligation</p>
       <h2>Get your free revenue projection</h2>
-      <p>Tell us about your Lake Hartwell home and we'll send back a custom earnings estimate — no pressure, no obligation. If we're a fit, great. If not, you'll still walk away knowing what your home could earn.</p>
+      <p>Tell us about your Lake Hartwell home and we&rsquo;ll send back a custom earnings estimate &mdash;
+        no pressure, no obligation. If we&rsquo;re a fit, great. If not, you&rsquo;ll still walk away knowing
+        what your home could earn.</p>
     </div>
-    <div class="form-tiein">Fill this out to get <b>two things back</b>: (1) your complimentary income projection, and (2) your <b>$5,000 Launch Package</b> options.</div>
-    <div class="formbox">
-      <iframe src="https://link.basecampgetaways.com/widget/form/qVfRSODy12KKV9R82IZs" id="inline-qVfRSODy12KKV9R82IZs" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Basecamp Getaways Management" data-height="892" data-layout-iframe-id="inline-qVfRSODy12KKV9R82IZs" data-form-id="qVfRSODy12KKV9R82IZs" title="Basecamp Getaways Management"></iframe>
+    <div class="form-tiein">Fill it out to get <b>two things back</b>: (1) your complimentary income
+      projection, and (2) your <b>$5,000 Launch Package</b> options.</div>
+    <div style="text-align:center;margin-top:26px">
+      <a class="btn" href="#heroform">Get my free projection &amp; package options &rarr;</a>
     </div>
   </div>
 </section>
@@ -380,5 +500,30 @@ footer .legal{margin-top:26px;border-top:1px solid rgba(255,255,255,.1);padding-
 </script>
 
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+<script>
+/* ---------------------------------------------------------------
+   OWNER INTRO VIDEO
+   Set VIDEO_SRC to your file, then the video appears in the hero.
+   Self-hosted example:  var VIDEO_SRC = "/owner-intro.mp4";
+   Leave it "" and the hero renders without a video (nothing breaks).
+   --------------------------------------------------------------- */
+var VIDEO_SRC = "";
+(function () {
+  if (!VIDEO_SRC) return;
+  var wrap = document.getElementById("heroVideo");
+  var vid  = document.getElementById("ownerVideo");
+  var end  = document.getElementById("hvEnd");
+  if (!wrap || !vid) return;
+  var src = document.createElement("source");
+  src.src = VIDEO_SRC;
+  src.type = "video/mp4";
+  vid.appendChild(src);
+  vid.load();
+  wrap.hidden = false;
+  vid.addEventListener("ended", function () { if (end) end.classList.add("show"); });
+  vid.addEventListener("play",  function () { if (end) end.classList.remove("show"); });
+})();
+</script>
 </body>
 </html>
